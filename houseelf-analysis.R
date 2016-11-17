@@ -7,3 +7,4 @@
 #3.2
 #3.3
 houseelf_dat <- read.csv("data/houseelf-earlength-dna-data.csv")
+#3.4 See "Git"
