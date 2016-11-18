@@ -1,4 +1,20 @@
 
+
+#1####
+get_data <-  function(){
+  data <- read.csv("survey.csv")
+}
+
+get_size_class <- function(weight){
+  if (weight>50){
+    size_class ="large"
+  }else{
+    size_class="small"
+  }
+  return(size_class)
+}
+
+
 #2. -- First Commit -- ####
 #This is the investigation of earlength and DNA relationship on house elf. 
 
@@ -13,3 +29,12 @@ houseelf_dat <- read.csv("data/houseelf-earlength-dna-data_1.csv")
 #4.1 
 
 #5. -- Adding a Remote -- ####
+
+#6####
+library(stringr)
+str_to_lower()
+str_to_upper()
+
+
+
+
