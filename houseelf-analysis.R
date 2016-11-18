@@ -6,5 +6,10 @@
 #3.1 
 #3.2
 #3.3
-houseelf_dat <- read.csv("data/houseelf-earlength-dna-data.csv")
+houseelf_dat <- read.csv("data/houseelf-earlength-dna-data_1.csv")
 #3.4 See "Git"
+
+#4. -- Commit Multiple Files -- ####
+#4.1 
+
+#5. -- Adding a Remote -- ####
