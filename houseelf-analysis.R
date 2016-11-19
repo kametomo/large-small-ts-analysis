@@ -27,5 +27,9 @@ Cs <- str_count(houseelf_dat, "c")
 gc_content <- (Gs + Cs) / str_length(houseelf_dat) * 100 
 gc_content
 
-
+get_ear_length <- function(seq){
+   #Calculate the GC-content for one or more sequences
+   ear_lengths <- ifelse(seq > 10, "large", "small")
+   return(ear_lengths)
+}
 
