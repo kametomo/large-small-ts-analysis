@@ -1,19 +1,7 @@
 
 
 #1####
-get_data <-  function(){
-  data <- read.csv("survey.csv")
-}
-
-get_size_class <- function(weight){
-  if (weight>50){
-    size_class ="large"
-  }else{
-    size_class="small"
-  }
-  return(size_class)
-}
-
+#1-4 complete (instaling Git in Rstudio)
 
 #2. -- First Commit -- ####
 #This is the investigation of earlength and DNA relationship on house elf. 
@@ -32,9 +20,12 @@ houseelf_dat <- read.csv("data/houseelf-earlength-dna-data_1.csv")
 
 #6####
 library(stringr)
-str_to_lower()
-str_to_upper()
+str_to_lower(houseelf_dat)
 
+Gs <- str_count(houseelf_dat, "g")
+Cs <- str_count(houseelf_dat, "c")
+gc_content <- (Gs + Cs) / str_length(houseelf_dat) * 100 
+gc_content
 
 
 
