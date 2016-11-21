@@ -20,16 +20,39 @@ houseelf_dat <- read.csv("data/houseelf-earlength-dna-data_1.csv")
 
 #6####
 library(stringr)
-str_to_lower(houseelf_dat)
 
-Gs <- str_count(houseelf_dat, "g")
-Cs <- str_count(houseelf_dat, "c")
-gc_content <- (Gs + Cs) / str_length(houseelf_dat) * 100 
-gc_content
+houseelf_dat2<- str_to_lower(houseelf_dat$dnaseq)
+
+get_gc_content <- function(sequence){
+  Gs <- str_count(sequence, "G")
+  Cs <- str_count(sequence, "C")
+  gc_content <- (Gs + Cs) / str_length(sequence) * 100 
+  return(gc_content)
+}
+
+gccontent <- get_gc_content(houseelf_dat2)
+
+#pulled the below function
+
 
 get_ear_length <- function(seq){
-   #Calculate the GC-content for one or more sequences
    ear_lengths <- ifelse(seq > 10, "large", "small")
    return(ear_lengths)
 }
+
+
+df <- data.frame(species=houseelf_dat$id,
+                 gc_content=get_gc_content(houseelf_dat$dnaseq),
+                 ear_length=get_ear_length(houseelf_dat$earlength),
+                 stringsAsFactors = FALSE)
+
+
+#7.5####
+df_earlength <- write.csv(df, file="earlength_dna_gc.csv")
+
+
+#7.6####
+
+
+
 
